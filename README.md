@@ -6,7 +6,7 @@ and preterm birth: a US ECHO Cohort analysis. The Lancet Planetary Health 101324
 Scripts to assess exposure and define exposure metrics are in the folder "1_exposure assessment".
 Analytic code to define models and generate results are in the folder "4_analysis".
 
-For ECHO analysts, code download and process raw ECHO data and link with wildfire estimates
+For ECHO analysts, code to download and process raw ECHO data and link with wildfire estimates
 are available on the ECHO Analysis Workbench under the folder "EC0680/USERS/asherris/ANALYSIS/code".
 
 Please direct queries to Allison Sherris, asherris@uw.edu or arsherris@gmail.com
@@ -39,18 +39,18 @@ the above spatiotemporal models and processed in a data table with the following
 The output of these functions will be summary estimates for average smoke, smoke days,
 and smoke waves across various exposure periods during gestation as follows:
 
-*ec0680_1b_define_exposure_metrics.R*: Evaluate exposure metrics across fixed exposure periods:
+**ec0680_1b_define_exposure_metrics.R**: Evaluate exposure metrics across fixed exposure periods:
 pregnancy, 0-32 weeks, and by trimester.
 
-*ec0680_1c_defined_exposure_metrics_survival.R*: Evaluate cumulative exposure metrics from
+**ec0680_1c_defined_exposure_metrics_survival.R**: Evaluate cumulative exposure metrics from
 22 weeks through delivery for survival analysis.
 
-*ec0680_1d_defined_ambientPM25_temp_metrics.R*: Evaluate summary metrics for ambient 
+**ec0680_1d_defined_ambientPM25_temp_metrics.R**: Evaluate summary metrics for ambient 
 temperature and total PM2.5.
 
-*ec0680_1e_define_weekly_exposure_metrics.R*: Evaluate weekly smoke days across pregnancy.
+**ec0680_1e_define_weekly_exposure_metrics.R**: Evaluate weekly smoke days across pregnancy.
 
 
-## Statistical analysis
+### Statistical analysis
 
-The script *ec0680_4a_prep_for_analysis.R* defines functions and covariates to execute analytic code.
+The script **ec0680_4a_prep_for_analysis.R** defines functions and covariates to execute analytic code.
