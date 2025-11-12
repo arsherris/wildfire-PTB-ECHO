@@ -6,12 +6,8 @@
 # load data
 load("processed data/1_exposure_assessment/wf_pm25_exposure_deidentified.RData")
 
-wf_pm25_exposure <- wf_pm25_exposure_deid %>% 
-  mutate(final_gest_day = (birth_ga*7))  # fix mistake in 1a_link_exposure_data version sent to DAC
-  
-quantile(wf_pm25_exposure$smokePM_pred[wf_pm25_exposure$smokePM_pred>0], probs = c(0, 0.25, .5, .75, .90, .95))
-
-# write function to assign wf exposure
+# write function to assign wildfire exposure based on daily wildfire-specific PM2.5 
+# estimates during pregnancy from Childs et al. 2022
 
 summarize_wf_exposure <- function(data, prefix) {
   
