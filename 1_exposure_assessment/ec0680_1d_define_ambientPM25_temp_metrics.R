@@ -18,12 +18,10 @@ summarize_totalPM_temp <- function(data, prefix) {
     arrange(gest_day) %>% 
     group_by(xParticipantID) %>% 
     # summarize exposure metrics by participant
-    summarize(percNA_totalPM = sum(is.na(total_pm25)) / n(),  #  missingness is the same for totalPM, mean temp, max temp
+    summarize(percNA_totalPM = sum(is.na(total_pm25)) / n(),  #  missingness is the same for totalPM, mean temp
               totalPM_mean = mean(total_pm25, na.rm=T),
-              mean_temp = mean(mean_temp, na.rm=T),
-              mean_maxtemp = mean(max_temp, na.rm=T)
-              ) %>%
-    mutate_at(vars(totalPM_mean:mean_maxtemp), ~ if_else(percNA_totalPM > 0.5, NA_real_, .)) %>% 
+              mean_temp = mean(mean_temp, na.rm=T)) %>%
+    mutate_at(vars(totalPM_mean), ~ if_else(percNA_totalPM > 0.5, NA_real_, .)) %>% 
     rename_at(vars(-xParticipantID), ~paste0(prefix, "_", .)) %>% 
     return
   

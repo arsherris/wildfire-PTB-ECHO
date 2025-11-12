@@ -72,13 +72,6 @@ wf_pm25_pregnancy <- wf_pm25_exposure %>%
          gest_day <= final_gest_day) %>% 
   summarize_wf_exposure(., "preg") 
 
-# exposure period doc to term
-wf_pm25_term <- wf_pm25_exposure %>%
-  filter(birth_ga >= 37,
-         gest_day >= 0,
-         gest_day <= 259) %>% 
-  summarize_wf_exposure(., "term") 
-
 # exposure period doc to 32 wk
 wf_pm25_32wk <- wf_pm25_exposure %>%
   filter(birth_ga >= 32,
